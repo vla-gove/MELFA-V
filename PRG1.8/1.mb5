@@ -1,0 +1,29 @@
+1 Def Io B2=Bit, 2
+2 Def Io B1=Bit, 900 ' define io bits b1 and b2
+3 Wait B2=1 ' wait for signal on b2 
+4 ovrd 20 ' movement speed
+5 MOV P1 ' move to p1
+6 DLY 1 ' one second delay
+7 Wait B1=1
+8 MOV P1temp 
+9 DLY 1
+10 ovrd 10
+11 MVS P2cyl, -40 ' linear movement to p2cyl shifted up by 40 units along z axis
+12 DLY 1
+13 MVS P2cyl ' move down to p2cyl
+14 DLY 1
+15 HCLOSE 1 ' close end effector hand 1
+16 DLY 1
+17 MVS P2cyl, -40
+18 DLY 1
+19 MOV P2temp
+20 DLY 1
+21 MOV P2
+22 DLY 1
+23 MVS P3
+24 DLY 1
+25 HOPEN 1 ' open end effector hand 1
+26 DLY 1
+27 MVS P2
+28 DLY 1
+29 MOV Phome ' move to home position
